@@ -1,7 +1,7 @@
 package com.green.winey_final.common.repository;
 
-import com.green.winey_final.common.entity.UserRecommandEntity;
+import com.green.winey_final.common.entity.UserRecommendEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRecommandRepository extends JpaRepository<UserRecommandEntity,Long> {
+public interface UserRecommandRepository extends JpaRepository<UserRecommendEntity,Long> {
 }

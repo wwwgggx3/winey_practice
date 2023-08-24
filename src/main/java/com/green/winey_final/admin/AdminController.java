@@ -23,7 +23,7 @@ public class AdminController {
     }
 
     @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-    public int postProduct(@RequestPart(required = false) MultipartFile pic, @RequestPart ProductInsParam param) {
+    public Long postProduct(@RequestPart(required = false) MultipartFile pic, @RequestPart ProductInsParam param) {
         return SERVICE.postProduct(pic, param);
     }
 }

@@ -15,6 +15,8 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.DynamicInsert;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "t_user", uniqueConstraints = {@UniqueConstraint(name = "unique_tuser_provider_uid", columnNames = {"provider_type", "email"})})
 @Data
