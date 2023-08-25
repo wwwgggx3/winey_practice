@@ -1,16 +1,20 @@
 package com.green.winey_final.admin;
 
-import com.green.winey_final.admin.model.ProductInsParam;
+import com.green.winey_final.admin.model.*;
 import com.green.winey_final.common.entity.*;
 import com.green.winey_final.common.repository.*;
 import com.green.winey_final.utils.MyFileUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -179,6 +183,22 @@ public class AdminService {
             winePairingRep.save(winePairingEntity);
         }
         return productResult.getProductId();
+    }
+
+    public Long putProduct(MultipartFile pic, ProductUpdParam param) {
+
+
+        return 1L;
+    }
+
+    //등록 상품 리스트 출력 (전체 상품)
+    public ProductList getProduct(Pageable pageable) {
+        //페이징
+        List<ProductEntity> productList = productRep.findAll();
+
+        return ProductList.builder()
+                .productList(productList)
+                .build();
     }
 
 
